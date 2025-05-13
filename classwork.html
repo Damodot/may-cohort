@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputValue">
+    <button onclick="addNum()">Add</button>
+</body>
+
+</html>
+
+<script>
+    let input = document.getElementById('inputValue');
+    let sensored = /fuck/gi
+    let sensored2 = /asshole/gi
+    function addNum() {
+        console.log(input.value.replace(sensored, "****"));
+        console.log(input.value.replace(sensored2, "*******"));
+        input.value = ""
+    }
+</script>

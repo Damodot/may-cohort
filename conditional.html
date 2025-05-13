@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="subtract()">Subtract</button>
+    <h1 id="pageNum"></h1>
+    <button onclick="add()">Add</button>
+</body>
+
+</html>
+
+<script>
+    // Pre Increment
+    let index = 1
+    console.log(++index);
+    console.log(index);
+
+    // Post Increment
+    let int = 0
+    console.log(int++);
+    console.log(int);
+
+    let pageNum = document.getElementById('pageNum')
+    let indexer = 0
+    pageNum.innerHTML = indexer
+    function add() {
+        if (indexer >= 5) {
+            indexer = 0
+        } else {
+            indexer++
+        }
+        pageNum.innerHTML = indexer
+    }
+
+    function subtract() {
+        if (indexer <= 0) {
+            indexer = 5
+        } else {
+            indexer--
+        }
+        pageNum.innerHTML = indexer
+    }
+
+    // Conditional Statements
+    let check = 4 > 8
+    if (check) {
+        console.log("Lets concentrate");
+    }
+
+
+    if (!true) {
+        console.log("Na true");
+    } else {
+        console.log("Na lie");
+    }
+
+
+    // else if summer, winter, autumn, spring, cloudy, rainy
+
+    let checker = "summer"
+    if (checker === "rainy") {
+        console.log("You definitely need an umbrella");
+    } else if (checker === "cloudy") {
+        console.log("You need an umbrella");
+    } else if (checker === "spring") {
+        console.log("You may need an umbrella");
+    } else if (checker === "autumn") {
+        console.log("You might need an umbrella");
+    } else if (checker === "winter") {
+        console.log("You must need an umbrella");
+    } else {
+        console.log("You dont need an umbrella")
+    }
+
+
+    let score = 70
+    if (score >= 80 && score <= 100) {
+        console.log("Your grade is A");
+    } else if (score >= 70 && score < 80) {
+        console.log("Your grade is B");
+    } else if (score >= 60 && score < 70) {
+        console.log("Your grade is C");
+    } else if (score >= 50 && score < 60) {
+        console.log("Your grade is D");
+    } else if (score >= 0 && score < 50) {
+        console.log("Your grade is E")
+    } else {
+        console.log("Invalid Input");
+    }
+
+
+</script>

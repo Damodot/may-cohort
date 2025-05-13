@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myText">Welcome to Python Class</p>
+    <h1 id="secText">This is nice Class</h1>
+    <div id="newDiv"></div>
+    <div id="anotherDiv"></div>
+</body>
+</html>
+<script>
+    console.log("Javascript")
+    var thisClass = "Javascript Class"
+    
+    thisClass = "Welcome To Javascript"
+    console.log(thisClass);
+
+    let anotherClass = "Pyhton Class"
+    
+    anotherClass = "Django Class"
+    console.log(anotherClass);
+
+    const nextClass = "HTML CSS"
+    console.log(nextClass);
+
+    let ourText = document.getElementById("myText")
+    ourText.innerHTML = "Welcome to Javascript class"
+    
+    console.log(ourText.textContent);
+    
+    let newText = document.getElementById("secText")
+    newText.innerHTML = "You guys will be great developers"
+
+    let newDiv = document.getElementById("newDiv")
+    newDiv.innerHTML = ` <section>
+        <button>Click Me</button>
+        <h1>Hello Everybody</h1>
+    </section>`
+    
+    let anotherDiv = document.getElementById('anotherDiv')
+    anotherDiv.style.width = "300px"
+    anotherDiv.style.height = "300px"
+    anotherDiv.style.backgroundColor = "red"
+    anotherDiv.style.borderRadius = "50px"
+    anotherDiv.innerHTML = "Javascript is interesting"
+
+    alert("Javascript is awesome")
+
+    confirm("Are you sure you want to delete?")
+
+    let userInfo = prompt("What is your name?")
+    console.log(userInfo);
+    
+    
+</script>

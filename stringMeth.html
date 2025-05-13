@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="showName">
+
+
+    </div>
+    <input type="text" id="myInput">
+    <button onclick="showInputValue()">Click Me</button>
+    <div id="showDisplay"></div>
+</body>
+
+</html>
+
+<script>
+    // String Methods
+
+
+    // Includes
+    let ugo = 'we are the best'
+    console.log(ugo.includes(' best'));
+
+    // startsWith
+    console.log(ugo.startsWith("we are the best"));
+    
+    // endsWith
+    console.log(ugo.endsWith("we are the best"));
+    
+
+    // Concatenation
+    let firstName = "Adedeji"
+    let lastName = "Adedotun"
+    let fullName = firstName.concat(" ", lastName, " ", "Anthony")
+    console.log(fullName);
+
+    let secFullName = firstName + " " + lastName
+    console.log(firstName + " " + lastName);
+
+    console.log(secFullName);
+
+    // Interpolation
+    let hobby = "Javascript"
+    console.log(`I love ${hobby}`);
+
+    showName.innerHTML = `<h1>I love ${hobby}</h1>`
+
+    let a = 3
+    let b = 4
+    console.log(`The addition of ${a} and ${b} is equals to ${a + b}`);
+
+
+    // Length
+    let ans = `The addition of ${a} and ${b} is equals to ${a + b}`
+    console.log(ans.length);
+
+    // lastIndexOf
+    console.log(hobby[hobby.length - 1]);
+
+    // UpperCase
+    console.log(hobby.toUpperCase());
+
+    // LowerCase
+    console.log(hobby.toLowerCase());
+
+    // Trim
+    let myOtherName = "     Anthony Adedeji    "
+    console.log(myOtherName.trim());
+
+    // Replace
+    let subject = "I love python"
+    console.log(subject.replace("python", "Javascript"));
+    console.log(subject);
+
+
+    // Slice
+    console.log(subject.slice(7));
+    console.log(subject.slice(2, 6));
+
+    // Split
+    console.log(subject.split(""));
+
+    // Number, ParseInt, +
+    let num1 = "10"
+    let num2 = "20"
+
+    console.log(Number(num1) + Number(num2));
+    
+
+
+    let sensoredWords = 'Fuck'
+    function showInputValue() {
+        console.log(myInput.value.toUpperCase());
+        console.log(myInput.value.includes(sensoredWords))
+        if (myInput.value.includes(sensoredWords)) {
+            showDisplay.innerHTML = "****"
+        } else {
+            showDisplay.innerHTML = myInput.value
+        }
+        myInput.value = ""
+    }
+
+
+    // let spaces = " "
+    // console.log(spaces);
+
+
+
+
+</script>
