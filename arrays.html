@@ -10,7 +10,11 @@
 </head>
 
 <body>
-
+    <p id="displayHere"></p>
+    <div id="displayCars">
+        <h1>Hello</h1>
+    </div>
+    <button onclick="dispMyCars()">Display</button>
 </body>
 
 </html>
@@ -19,29 +23,116 @@
     let arr = Array()
     console.log(arr);
 
-    let newArray = [1, 'string', true,'arrays', 'banana']
+    let newArray = [1, 'string', true, 'arrays', 'banana']
     let lastGuy = newArray[newArray.length - 1]
     console.log(lastGuy[lastGuy.length - 1]);
-    
-    let arrOfArr = [[1,2,3], ['Name', 'Age', 'isMarried']]
+
+    let arrOfArr = [[1, 2, 3], ['Name', 'Age', 'isMarried']]
     console.log(newArray);
     console.log(arrOfArr);
     let secArr = arrOfArr[1]
     console.log(secArr);
     console.log(newArray[2]);
 
-   console.log(arrOfArr[1][2].length);
-   console.log(arrOfArr.length);
-   console.log(newArray.length);
+    console.log(arrOfArr[1][2].length);
+    console.log(arrOfArr.length);
+    console.log(newArray.length);
 
 
     let myClass = "Javascript"
     console.log(myClass[0]);
 
     console.log(myClass.length);
-    
 
 
+    const fruit = ['Apple', 'Banana', 'Mango']
+    document.getElementById('displayHere').innerHTML = fruit.toString();
+
+
+
+
+    let newArr = [1, 2, 3]
+    newArr.push(4)
+    newArr.unshift(0)
+    console.log(newArr);
+
+    // let myString = "Javascript"
+    // console.log(myString.replace("script", "script Python"));
+    // console.log(myString);
+
+    let cars = ["Benz", "Honda", "GLE", "GLK"]
+    let sliced = cars.splice(1, 3, "Dodge", "Chevrolet", "Mercedes", "CherryQQ", "Ferrari")
+    console.log(cars);
+
+    let newNumbers = [1, 2, 3, 4, 5]
+    console.log(eval(newNumbers.join("*")));
     
-    
+    console.log(cars.toString());
+    console.log(cars.join("#"));
+
+
+
+
+    cars.splice(1, 1, "Dodge", "Cheverolet")
+    console.log(cars);
+
+    let myClass2 = "Big Java Devs"
+    console.log(myClass2.slice(0, 8));
+
+
+    // cars.splice(2, 1)
+    // console.log(cars);
+
+    // cars.includes("Chevrolet")
+    // cars.push('Mercedes')
+    // cars.unshift('chevrolet')
+    // cars.shift()
+    // cars.splice()
+    // console.log(cars);
+
+    // let lastcars = cars.pop()
+    // console.log(cars);
+    // console.log(lastcars);
+    // console.log(2,0,dodge);
+
+
+
+    console.log(cars.includes("Chevrolet"));
+
+    function dispMyCars() {
+        displayCars.innerHTML += `<h1>${cars[0]}</h1>`
+        displayCars.innerHTML += `<h1>${cars[1]}</h1>`
+        displayCars.innerHTML += `<h1>${cars[2]}</h1>`
+        displayCars.innerHTML += `<h1>${cars[3]}</h1>`
+        displayCars.innerHTML += `<h1>${cars[4]}</h1>`
+        displayCars.innerHTML += `<h1>${cars[5]}</h1>`
+    }
+
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    numbers.reverse()
+    console.log(numbers);
+
+    numbers.sort()
+    console.log(numbers);
+
+    let className = ["Itiayo", "Ugonna", "Feranmi", "Folarin", "Josiah", "Ezekiel", "Emmanuel", "AY", "Emmanuel", "Wajeed", "Ronald"]
+    className.sort()
+    console.log(className);
+
+    let arr2 = [1, 2, 3]
+    arr2.fill(0)
+    console.log(arr2);
+
+    let arr3 = new Array(5).fill(9)
+    console.log(arr3);
+
+
+
+
+
+
+
+
+
+
 </script>

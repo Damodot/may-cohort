@@ -50,9 +50,11 @@
     let player = true
 
     cell1.onclick = function () {
-        if (!cell1.innerHTML) {          
-            player ? (cell1.innerHTML = `<h1>X</h1>`, player = false) : (cell1.innerHTML = `<h1>O</h1>`, player = true)
-        }
+        !cell1.innerHTML ?
+            player ?
+                (cell1.innerHTML = `<h1>X</h1>`, player = false) :
+                (cell1.innerHTML = `<h1>O</h1>`, player = true) :
+            null
     }
     cell2.onclick = function () {
         if (!cell2.innerHTML) {
