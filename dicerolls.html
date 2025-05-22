@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Two Dice Roll Simulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 60px;
+            background-color: #f9f9f9;
+        }
+
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 100px;
+            transition: transform 0.4s ease;
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(20deg);
+            }
+
+            50% {
+                transform: rotate(-20deg);
+            }
+
+            75% {
+                transform: rotate(20deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            font-size: 24px;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dice-container" id="diceContainer">
+        <div id="dice1">⚀</div>
+        <div id="dice2">⚀</div>
+    </div>
+
+    <button class="btn" onclick="rollDice()">Roll Dice</button>
+
+    <div class="result" id="resultText">Click to roll the dice</div>
+
+    <script>
+        const diceUnicode = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+        function rollDice() {
+            const dice1 = document.getElementById('dice1');
+            const dice2 = document.getElementById('dice2');
+            const resultText = document.getElementById('resultText');
+            const container = document.getElementById('diceContainer');
+
+            container.classList.add('shake');
+
+            setTimeout(() => {
+                const roll1 = Math.floor(Math.random() * 6);
+                const roll2 = Math.floor(Math.random() * 6);
+
+                dice1.textContent = diceUnicode[roll1];
+                dice2.textContent = diceUnicode[roll2];
+
+                const total = roll1 + roll2 + 2;
+                resultText.textContent = `You rolled a ${roll1 + 1} and ${roll2 + 1} (Total: ${total})`;
+
+                container.classList.remove('shake');
+            }, 500);
+        }
+    </script>
+
+</body>
+
+</html>

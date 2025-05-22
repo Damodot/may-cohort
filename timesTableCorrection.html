@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="startNumber">
+    <input type="number" id="endNumber">
+    <button onclick="generateTimestable()">Generate</button>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    let startNumber = document.getElementById(`startNumber`)
+    let endNumber = document.getElementById(`endNumber`)
+    let result = document.getElementById(`result`)
+
+    function generateTimestable() {
+        console.log(startNumber.value);
+        console.log(endNumber.value)
+        if (!startNumber.value || !endNumber.value) {
+            alert('all fields are mandatory')
+
+        } else {
+            
+
+            if (startNumber.value > endNumber.value ) {
+                result.innerHTML = 'Invalid value'
+            }
+            else{
+                result.innerHTML = ""
+                for (let index = startNumber.value; index <= endNumber.value; index++) {
+                for (let i = 1; i < 13; i++) {
+                    result.innerHTML += `<h6> ${index} * ${i} = ${i * index} </h6>`
+
+                }
+
+            }
+            }
+
+        }
+
+    }
+
+
+
+</script>

@@ -28,22 +28,98 @@
     // let randNum1 = Math.floor(Math.random()*10)
     // let firstNum = "" + randNum1
     // console.log(firstNum + randNum1);
-    
-    
-
-
-
-
-
 
 
 
     let pin = ''
     for (let i = 1; i < 13; i++) {
-        let randNum = Math.floor(Math.random()*10);
+        let randNum = Math.floor(Math.random() * 10);
         pin = pin + randNum
     }
 
     console.log(pin);
-    
+
+
+    let newArr = [1, 2, 3, 4, 5, 6]
+    for (const nums of newArr) {
+        console.log(nums);
+    }
+    for (let i = 0; i < newArr.length; i++) {
+        const element = newArr[i];
+        console.log(element);
+
+    }
+
+    for (let i = 1; i < 13; i++) {
+        console.log(`2 * ${i} = ${2 * i}`);
+    }
+
+    let latArr = [1, 2, 3, 4, 5]
+    let sum = 0
+    // for (let i = 0; i < latArr.length; i++) {
+    //     const element = latArr[i];
+    //     sum = sum + element
+
+    // }
+    // console.log(sum);
+
+    // for (const arr of latArr) {
+    //     sum = sum + arr
+    // }
+    // console.log(sum);
+
+
+    let int = 1
+    while (int < 13) {
+        console.log(`2 * ${int} = ${2 * int}`);
+        int++
+    }
+
+    // let num = 0
+    // while (num < latArr.length) {
+    //     sum = sum + latArr[num]
+    //     num++
+    // }
+    console.log(sum);
+
+    let integer = 2
+    while (integer < 1) {
+        console.log(integer);
+    }
+
+    let ind = 0
+    do {
+        sum = sum + latArr[ind]
+        ind++
+    } while (ind < latArr.length)
+    console.log(sum)
+
+    for (let i = 0; i <= 5; i++) {
+
+        if (i == 6) {
+            break
+        }
+
+        console.log(i)
+    }
+
+    // let isDraw = true
+    // for (let i = 0; i< winCondition.length; i++) {
+    //   if (getCellValues (a)) {
+    //     break
+    //   }
+    // }
+
+    for (let i = 1; i < 13; i++) {
+        // console.log(i*2);
+        if (i == 5) {
+            break
+        }
+        console.log(i*2);
+        
+        
+        
+        
+    }
+
 </script>

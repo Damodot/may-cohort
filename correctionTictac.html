@@ -20,6 +20,7 @@
             width: 100px;
             height: 100px;
             border: 2px solid white;
+            font-size: 50px;
         }
     </style>
 </head>
@@ -27,20 +28,21 @@
 <body>
     <main class="p-3 m-auto shadow rounded">
         <div class="row d-flex">
+            <div id="cell0" class="cell d-flex align-content-center justify-content-center"></div>
             <div id="cell1" class="cell d-flex align-content-center justify-content-center"></div>
             <div id="cell2" class="cell d-flex align-content-center justify-content-center"></div>
-            <div id="cell3" class="cell d-flex align-content-center justify-content-center"></div>
         </div>
         <div class="row d-flex">
+            <div id="cell3" class="cell d-flex align-content-center justify-content-center"></div>
             <div id="cell4" class="cell d-flex align-content-center justify-content-center"></div>
             <div id="cell5" class="cell d-flex align-content-center justify-content-center"></div>
-            <div id="cell6" class="cell d-flex align-content-center justify-content-center"></div>
         </div>
         <div class="row d-flex">
+            <div id="cell6" class="cell d-flex align-content-center justify-content-center"></div>
             <div id="cell7" class="cell d-flex align-content-center justify-content-center"></div>
             <div id="cell8" class="cell d-flex align-content-center justify-content-center"></div>
-            <div id="cell9" class="cell d-flex align-content-center justify-content-center"></div>
         </div>
+        <h2 id="status" class="text-center text-dark"></h2>
     </main>
 </body>
 
@@ -48,101 +50,45 @@
 
 <script>
     let player = true
+    let cells = document.querySelectorAll('.cell')
+    let status = document.getElementById('status')
 
-    cell1.onclick = function () {
-        !cell1.innerHTML ?
-            player ?
-                (cell1.innerHTML = `<h1>X</h1>`, player = false) :
-                (cell1.innerHTML = `<h1>O</h1>`, player = true) :
-            null
-    }
-    cell2.onclick = function () {
-        if (!cell2.innerHTML) {
-            if (player) {
-                cell2.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell2.innerHTML = `<h1>O</h1>`
-                player = true
+    console.log(cells);
+
+    for (const cell of cells) {
+        cell.onclick = function () {
+            if (!cell.innerHTML) {
+                player ? (cell.innerHTML = `X`, player = false) : (cell.innerHTML = `O`, player = true)
             }
-        }
-    }
-    cell3.onclick = function () {
-        if (!cell3.innerHTML) {
-            if (player) {
-                cell3.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell3.innerHTML = `<h1>O</h1>`
-                player = true
-            }
-        }
-    }
-    cell4.onclick = function () {
-        if (!cell4.innerHTML) {
-            if (player) {
-                cell4.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell4.innerHTML = `<h1>O</h1>`
-                player = true
-            }
-        }
-    }
-    cell5.onclick = function () {
-        if (!cell5.innerHTML) {
-            if (player) {
-                cell5.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell5.innerHTML = `<h1>O</h1>`
-                player = true
-            }
-        }
-    }
-    cell6.onclick = function () {
-        if (!cell6.innerHTML) {
-            if (player) {
-                cell6.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell6.innerHTML = `<h1>O</h1>`
-                player = true
-            }
-        }
-    }
-    cell7.onclick = function () {
-        if (!cell7.innerHTML) {
-            if (player) {
-                cell7.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell7.innerHTML = `<h1>O</h1>`
-                player = true
-            }
-        }
-    }
-    cell8.onclick = function () {
-        if (!cell8.innerHTML) {
-            if (player) {
-                cell8.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell8.innerHTML = `<h1>O</h1>`
-                player = true
-            }
-        }
-    }
-    cell9.onclick = function () {
-        if (!cell9.innerHTML) {
-            if (player) {
-                cell9.innerHTML = `<h1>X</h1>`
-                player = false
-            } else {
-                cell9.innerHTML = `<h1>O</h1>`
-                player = true
-            }
+            knowWinner()
         }
     }
 
+    function getCellValues(i) {
+        return document.getElementById('cell' + i).innerHTML
+    }
+
+    function knowWinner() {
+        winCondition = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ]
+
+        for (const element of winCondition) {
+            let a = element[0]
+            let b = element[1]
+            let c = element[2]
+
+            if (getCellValues(a) != '' && getCellValues(a) === getCellValues(b) && getCellValues(b) === getCellValues(c)) {
+                status.innerHTML = (`Player ${getCellValues(a)} Wins`)
+            }
+        }
+
+    }
 </script>
