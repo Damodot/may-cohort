@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button onClick="sayGoodbye()">Click Me</button> -->
+</body>
+
+</html>
+
+<script>
+    // Global, Function, Local scope
+    let myClass = "Javascript"
+
+    function sayGoodbye() {
+        console.log("Say Goodbye");
+        console.log(myClass);
+        let nextClass = "React"
+        var firstClass = "HTML"
+    }
+
+    sayGoodbye()
+
+    function sayHello() {
+        let studentName = "Emmanuel"
+        function callName() {
+            console.log("Hello " + studentName);
+        }
+        callName()
+    }
+    sayHello()
+
+    // // Local Scope
+    for (let index = 0; index < 1; index++) {
+        let newestClass = "Graphics"
+        var schoolName = "SQI"
+    }
+    console.log(schoolName);
+
+
+    // FUNCTIONS
+    // Function Declaration
+    function sayName() {
+        console.log("Shout Name")
+    }
+
+    sayName()
+
+    // Function Expression
+    const newName = function () {
+        console.log("Function Expression");
+    }
+
+    newName();
+
+    // Anonymous Function
+    (function () {
+        console.log("I am an anonymous function");
+    })();
+
+    let anonymous = function () {
+        console.log("I am anonymous function");
+    }
+
+    anonymous()
+
+    // Arrow Functions
+    let sayNameOutLoud = () => {
+        console.log("I am an arrow function");
+    }
+
+    sayNameOutLoud();
+
+    // IIFE Immediately Invoked Function Expression
+    (function name() {
+        console.log("I am an IIFE function");
+
+    })();
+
+    // Parameters and Arguments
+    function sayStudentName(params) {
+        console.log("Hello " + params);
+    }
+
+    sayStudentName("ItiAyo");
+
+    let num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let num2 = [10, 11, 12, 13, 14, 15, 16, 17, 18]
+    function loopNumbers(params) {
+        for (let i = 0; i < params.length; i++) {
+            const element = params[i];
+            console.log(element);
+        }
+    }
+
+    loopNumbers(num2);
+
+    // Functions with two parameters
+    function addNumber(firstNum, secondNum) {
+        console.log(Number(firstNum) + Number(secondNum));
+    }
+
+    addNumber("10", "20");
+
+    // Functions with unlimited parameters
+    function addUnknownNumbers() {
+        console.log(arguments);
+        let sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            const element = arguments[i];
+            sum = element + sum
+        }
+        console.log(sum);
+
+    }
+    addUnknownNumbers(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
+
+    // Function returning a value
+    function courseType() {
+        let a = 10
+        let b = 20
+        let ans = a + b
+        return
+    }
+
+    console.log(courseType());
+
+
+    let firstName = ""
+    let lastName = ""
+    let userName = ""
+    let email = ""
+    let password = ""
+    let confirmPassword = ""
+
+    function signUp() {
+        if (!firstName || !lastName || !userName || !email || !password) {
+            alert("All fields are mandatory")
+            return
+        }
+        if (password !== confirmPassword) {
+            alert("Passwords are not the same")
+            return
+        }
+        alert("User created successfully")
+    }
+
+
+    // Generate a function that changes the color of a div onclick of a button
+    // Generate a function that that generate a random rgb color everytime
+    // Generate a carousel 
+
+    let picturesArray = ['https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=']
+
+</script>

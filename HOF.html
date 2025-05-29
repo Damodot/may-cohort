@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body id="body">
+    <div class="pic-cont">
+        <button onclick="Previous()">Previous</button>
+        <img id="pic" src="" alt="">
+        <button onclick="Next()">Next</button>
+    </div>
+    <button onclick="changeColor()">Change Color</button>
+
+    <input type="password" id="password">
+    <button onclick="changeType()">Change Type</button>
+</body>
+
+</html>
+
+<script>
+
+    function changeType() {
+        let passwordd = document.getElementById('password')
+    
+
+        if (passwordd.type == "password") {
+            passwordd.type = "text"
+        }else{
+            passwordd.type = "password"
+        }
+        
+    }
+
+    let pic = document.getElementById("pic")
+
+    let picArr = ["https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=", "https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg", "https://media.istockphoto.com/id/1419410282/photo/silent-forest-in-spring-with-beautiful-bright-sun-rays.jpg?s=612x612&w=0&k=20&c=UHeb1pGOw6ozr6utsenXHhV19vW6oiPIxDqhKCS2Llk="]
+    let index = 0;
+    pic.src = picArr[index ]
+
+    function Next() {
+        if (index === picArr.length - 1 ) {
+            index = 0
+            pic.src = picArr[index] 
+         } else {
+             index++
+             pic.src = picArr[index]
+        }
+       
+    }
+
+
+    function Previous() {
+        if (index === 0) {
+            index = picArr.length - 1
+            pic.src = picArr[index]
+        }else{
+            index --
+              pic.src = picArr[index]
+        }
+    }
+
+    function changeColor() {
+        let body = document.getElementById('body')
+
+        let r = Math.floor(Math.random () * 256)
+        let g = Math.floor(Math.random () * 256)
+        let b = Math.floor(Math.random () * 256)
+
+        function randomNumber() {
+             return Math.floor(Math.random () * 256)
+        }
+        
+        console.log(randomNumber());
+        
+
+        // body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`
+        body.style.backgroundColor = `rgb(${randomNumber()},${randomNumber()},${randomNumber()})`
+    }
+</script>
