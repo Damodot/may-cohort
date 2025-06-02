@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="provider">
+    <input type="text" id="amount">
+    <button onclick="addCard()">Add Card</button>
+    <table>
+        <thead>
+            <tr>
+                <th>S/N</th>
+                <th>Provider</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+<script>
+    let cardDatabase = []
+    function addCard() {
+        if (!provider.value.trim() || !amount.value.trim()) {
+            alert('Please fill all fields')
+            return
+        }
+        let cardObj = {
+            providerName: provider.value.trim(),
+            amountVal: amount.value.trim()
+        }
+        let i = 0
+        console.log(cardObj);
+        cardDatabase.push(cardObj)
+        console.log(cardDatabase);
+        provider.value = ''
+        amount.value = ''
+        tbody.innerHTML = ''
+        for (const element of cardDatabase) {
+            tbody.innerHTML += `
+            <tr>
+                <td>${++i}</td>
+                <td>${element.providerName}</td>
+                <td>${element.amountVal}</td>
+            </tr>
+            `
+        }
+    }
+</script>

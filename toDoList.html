@@ -27,9 +27,11 @@
     let todoDatabase = []
 
     function displayTodos() {
+        let display = document.getElementById('display')
         display.innerHTML = ''
-        for (let i = 0; i < todoDatabase.length; i++) {
-            const toDo = todoDatabase[i];
+        let i = 0
+        for (const toDo of todoDatabase) {
+            // const toDo = todoDatabase[i];
             display.innerHTML += `
             <div class="d-flex justify-content-between mt-4">
                 <h3>${i + 1}</h3>
@@ -39,18 +41,20 @@
                     <button class='btn btn-danger ms-3' onclick='deleteTodo(${i})'>Delete</button>
                 </div>
             </div>`
+            i++
         }
     }
+
 
     function addTodo() {
         if (!todoInput.value) {
             alert('Please enter a valid task')
-            return
+        } else {
+            todoDatabase.push(todoInput.value.trim())
+            console.log(todoDatabase);
+            todoInput.value = ''
+            displayTodos()
         }
-        todoDatabase.push(todoInput.value.trim())
-        console.log(todoDatabase);
-        todoInput.value = ''
-        displayTodos()
     }
 
     function deleteTodo(i) {
@@ -78,4 +82,9 @@
 
     // console.log(arr);
 
+    let newIndex = 0
+    console.log(++newIndex);
+    console.log(newIndex);
+    
+    
 </script>
